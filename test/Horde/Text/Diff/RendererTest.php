@@ -6,11 +6,21 @@
  * @package    Text_Diff
  * @subpackage UnitTests
  */
-class Horde_Text_Diff_RendererTest extends Horde_Test_Case
+namespace Horde\Text;
+use \Diff;
+use Horde_Test_Case;
+use \Horde_Text_Diff;
+use \Horde_Text_Diff_Renderer_Context;
+use \Horde_Text_Diff_Renderer_Inline;
+use \Horde_Text_Diff_Renderer_Unified;
+use \Horde_Text_Diff_Renderer;
+use \Horde_Text_Diff_ThreeWay;
+
+class RendererTest extends Horde_Test_Case
 {
     protected $_lines = array();
 
-    public function setUp()
+    public function setUp(): void
     {
         for ($i = 1; $i <= 8; $i++) {
             $this->_lines[$i] = file(__DIR__ . '/fixtures/' . $i . '.txt');
