@@ -8,10 +8,10 @@
  */
 namespace Horde\Text;
 use \Diff;
-use Horde_Test_Case;
+use Horde_Test_Case as TestCase;
 use \Horde_Text_Diff_ThreeWay;
 
-class Horde_Text_Diff_ThreeWayTest extends Horde_Test_Case
+class ThreeWayTest extends TestCase
 {
     protected $_lines = array();
 

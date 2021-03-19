@@ -8,7 +8,7 @@
  */
 namespace Horde\Text;
 use \Diff;
-use Horde_Test_Case;
+use Horde_Test_Case as TestCase;
 use \Horde_Text_Diff;
 use \Horde_Text_Diff_Renderer_Context;
 use \Horde_Text_Diff_Renderer_Inline;
@@ -16,7 +16,7 @@ use \Horde_Text_Diff_Renderer_Unified;
 use \Horde_Text_Diff_Renderer;
 use \Horde_Text_Diff_ThreeWay;
 
-class RendererTest extends Horde_Test_Case
+class RendererTest extends TestCase
 {
     protected $_lines = array();
 
@@ -296,6 +296,8 @@ QQ;
         $diff = new Horde_Text_Diff('Native', array(explode("\n", $b), explode("\n", $a)));
         $renderer = new Horde_Text_Diff_Renderer_Inline();
         $renderer->render($diff);
+
+        $this->markTestIncomplete();
     }
     
     public function testGithubPullRequest86() 
